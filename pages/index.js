@@ -1,6 +1,6 @@
 import Layout from '../components/layout';
 
-export default function Home() {
+function Home({ stars }) {
   return (
     <Layout title="Sobre Nosotros">
       <main>
@@ -11,6 +11,19 @@ export default function Home() {
           PROBLEMAS, CAUSAS Y SOLUCIONES
         </p>
       </main>
+      <ul>
+        {stars.map((post) => (
+          <li>{post.norma}</li>
+        ))}
+      </ul>
     </Layout>
   )
 }
+
+Home.getInitialProps = async (ctx) => {
+  const res = await fetch('http://concreton.com.mx/api/api.php')
+  const json = await res.json()
+  return { stars: json.Numeros }
+}
+
+export default Home;
