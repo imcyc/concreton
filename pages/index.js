@@ -2,17 +2,22 @@ import Layout from '../components/layout';
 
 function Home({ stars }) {
   return (
-    <Layout title="Sobre Nosotros">
-      <main>
-        <p className="description">
-          PROBLEMAS, CAUSAS Y SOLUCIONES
-        </p>
+    <Layout title="CONCRETON Problemas. Causas y Soluciones del concreto en obra">
+      <main className="mt-5 mb-5">
+        <div className="container-fluid" style={{ overflow: 'auto' }}>
+          <div className="row flex-row flex-nowrap">
+            {stars.map((post) => (
+              <div className="col-2" key={post.id}>
+                <div className="card card-block">
+                  <img src={`http://redcyc.com/imcyc/concreton/${post.ano}/${post.imagen}`} />
+                  {post.norma} - {post.volumen} - {post.ano}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </main>
-      <ul>
-        {stars.map((post) => (
-          <li>{post.norma}</li>
-        ))}
-      </ul>
+
     </Layout>
   )
 }
