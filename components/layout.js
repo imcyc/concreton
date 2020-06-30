@@ -14,24 +14,35 @@ export default function Layout({
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"></link>
             </Head>
             <header>
-                <nav>
-                    <Link href="/">
-                        <a>Home</a>
-                    </Link>{' '}
-          |
-          <Link href="/somos">
-                        <a>About</a>
-                    </Link>{' '}
-          |
-          <Link href="/contact">
-                        <a>Contact</a>
-                    </Link>
-                </nav>
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-md-12 p-0 m-0">
+                            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                                <a className="navbar-brand" href="/">CONCRETON</a>
+                                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span className="navbar-toggler-icon"></span>
+                                </button>
+                                <Link href="/somos">
+                                    <a>Home</a>
+                                </Link>{' '}
+                            </nav>
+                        </div>
+
+                    </div>
+                </div>
             </header>
 
             {children}
 
-            <footer>{'I`m here to stay'}</footer>
+            <footer>
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-md-12 p-0 m-0">
+                            <p className="p-3 m-0">® 2020 Instituto Mexicano del Cemento y del Concreto A.C.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
 
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
